@@ -19,3 +19,30 @@
 - Sprint 1: Cadastro de cursos.
 - Sprint 2: Progresso.
 - Sprint 3: Certificados.
+
+------------------------------------------------------------------------
+
+**Entidades:**
+
+-   **Curso**
+    -   `id` (PK)\
+    -   `titulo`\
+    -   `descricao`\
+    -   `carga_horaria` (inteiro \> 0)
+-   **Aluno**
+    -   `id` (PK)\
+    -   `nome`\
+    -   `email` (único)
+-   **Inscricao**
+    -   `id` (PK)\
+    -   `curso_id` (FK → Curso)\
+    -   `aluno_id` (FK → Aluno)\
+    -   `status` (enum: `MATRICULADO`, `CONCLUIDO`, `CANCELADO`)
+-   **Progresso**
+    -   `id` (PK)\
+    -   `inscricao_id` (FK → Inscricao)\
+    -   `percentual` (0--100)
+-   **Certificado**
+    -   `id` (PK)\
+    -   `inscricao_id` (FK → Inscricao, único)\
+    -   `data_emissao`
